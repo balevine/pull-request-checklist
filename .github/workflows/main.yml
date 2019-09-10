@@ -1,7 +1,6 @@
 name: Checklist
 
 on: pull_request
-name: create a merge checklist
 jobs:
   create-checklist-comment:
     name: checklist comment
