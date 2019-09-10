@@ -4,7 +4,7 @@ const octokit = new github.GitHub(process.env.PERSONAL_GITHUB_TOKEN)
 
 async function run() {
   const payload = github.context.payload
-  const pull_request_number = payload.pull_request.number
+  const issue_number = payload.pull_request.number
   const repo = payload.repository.name
   const owner = payload.repository.owner.login
 
@@ -22,7 +22,7 @@ async function run() {
     return octokit.issues.createComment({
       owner,
       repo,
-      pull_request_number,
+      issue_number,
       body
     })
   } catch (err) {
