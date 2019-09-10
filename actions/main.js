@@ -5,12 +5,8 @@ const octokit = new github.GitHub(process.env.PERSONAL_GITHUB_TOKEN)
 async function run() {
   const payload = github.context.payload
   console.dir(payload)
-  const action = payload.action
   const pull_request = payload.pull_request
   const repository = payload.repository
-
-  console.log(`Action: ${action}`)
-  console.log(`Issue number: ${pull_request.number}`)
 
   // create an issue comment with a merge checklist
   bodyText = `Thanks for opening a pull request! Before merging this pull request, please check off the following items:  
@@ -23,8 +19,8 @@ async function run() {
     For checklist items that are not applicable, you can edit this comment and delete those items.`
 
   octokit.issues.createComment({
-    owner: payload.owner,
-    repo: repository,
+    owner: payload.owner.login,
+    repo: repository.name,
     issue_number: pull_request.number,
     body: bodyText
   })
