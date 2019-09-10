@@ -9,7 +9,7 @@ async function run() {
   const owner = payload.repository.owner.login
 
   // create an issue comment with a merge checklist
-  const bodyText = `Thanks for opening a pull request! Before merging this pull request, please check off the following items:  
+  const body = `Thanks for opening a pull request! Before merging this pull request, please check off the following items:  
     -[ ] Tests are written and passing.  
     -[ ] Documentation has been written or updated (internal and external).  
     -[ ] If the feature has a user-facing component, make sure it is backward compatible or that affected users have been notified of the change.  
@@ -23,7 +23,7 @@ async function run() {
       owner,
       repo,
       pull_request_number,
-      bodyText
+      body
     })
   } catch (err) {
     return console.log(err)
