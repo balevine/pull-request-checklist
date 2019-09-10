@@ -11,9 +11,9 @@ async function run() {
 
   console.log(`Action: ${action}`)
   console.log(`Issue number: ${pull_request.number}`)
-  if (action == 'opened') {
-    // create an issue comment with a merge checklist
-    bodyText = `Thanks for opening a pull request! Before merging this pull request, please check off the following items:  
+
+  // create an issue comment with a merge checklist
+  bodyText = `Thanks for opening a pull request! Before merging this pull request, please check off the following items:  
     -[ ] Tests are written and passing.  
     -[ ] Documentation has been written or updated (internal and external).  
     -[ ] If the feature has a user-facing component, make sure it is backward compatible or that affected users have been notified of the change.  
@@ -22,13 +22,12 @@ async function run() {
     
     For checklist items that are not applicable, you can edit this comment and delete those items.`
 
-    octokit.issues.createComment({
-      owner: payload.owner,
-      repo: repository,
-      issue_number: pull_request.number,
-      body: bodyText
-    })
-  }
+  octokit.issues.createComment({
+    owner: payload.owner,
+    repo: repository,
+    issue_number: pull_request.number,
+    body: bodyText
+  })
 }
 
 run()

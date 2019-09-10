@@ -1,6 +1,7 @@
 name: Checklist
 
 on: pull_request
+  types: [opened]
 jobs:
   create-checklist-comment:
     name: checklist comment
