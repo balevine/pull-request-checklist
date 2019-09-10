@@ -1,6 +1,6 @@
 {
-  "name": "PR Checklist",
-  "version": "0.1",
+  "name": "Checklist",
+  "version": "0.1.0",
   "description": "Create checklists for newly opened GitHub pull requests",
   "repository": "balevine/actions",
   "keywords": [
