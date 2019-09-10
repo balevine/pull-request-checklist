@@ -19,6 +19,7 @@ async function run() {
     
     For checklist items that are not applicable, you can edit this comment and delete those items.`
 
+    console.log(`Issue number: ${issue.number}`)
     octokit.issues.createComment({
       owner: payload.owner,
       repo: repository,
