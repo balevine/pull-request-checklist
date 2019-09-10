@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create comment
-        uses: balevine/actions/checklist@production
+        uses: balevine/actions@production
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

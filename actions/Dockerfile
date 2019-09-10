@@ -12,4 +12,4 @@ COPY . .
 
 RUN npm install --production
 
-ENTRYPOINT ["node", "/checklist.js"]
+ENTRYPOINT ["node", "/main.js"]
