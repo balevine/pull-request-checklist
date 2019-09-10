@@ -3,9 +3,10 @@ const process = require('process')
 const octokit = new github.GitHub(process.env.PERSONAL_GITHUB_TOKEN)
 
 async function run() {
+  console.dir(payload)
   const payload = github.context.payload
   const action = payload.action
-  const pull_request = payload.check_run.pull_requests
+  const pull_request = payload.pull_request
   const repository = payload.repository
 
   console.log(`Action: ${action}`)
