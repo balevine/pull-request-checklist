@@ -1,0 +1,9 @@
+name: 'Checklist'
+author: 'balevine'
+description: 'A GitHub Action to add a checklist to your pull requests.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-square'
+  color: 'purple'
