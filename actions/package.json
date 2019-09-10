@@ -1,5 +1,5 @@
 {
-  "name": "Checklist",
+  "name": "checklist",
   "version": "0.1.0",
   "description": "Create checklists for newly opened GitHub pull requests",
   "repository": "balevine/actions",
