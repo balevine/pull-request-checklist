@@ -19,7 +19,7 @@ async function run() {
     For checklist items that are not applicable, you can edit this comment and delete those items.`
 
   octokit.issues.createComment({
-    owner: payload.owner.login,
+    owner: repository.owner.login,
     repo: repository.name,
     issue_number: pull_request.number,
     body: bodyText
