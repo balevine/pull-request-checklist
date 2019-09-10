@@ -4,7 +4,6 @@ const octokit = new github.GitHub(process.env.PERSONAL_GITHUB_TOKEN)
 
 async function run() {
   const payload = github.context.payload
-  console.dir(payload)
   const pull_request = payload.pull_request
   const repository = payload.repository
 
@@ -19,6 +18,8 @@ async function run() {
     For checklist items that are not applicable, you can edit this comment and delete those items.`
 
   try {
+    console.log(`Owner: ${repository.owner.login}`)
+    console.log(`Repo: ${repository.name}`)
     return octokit.issues.createComment({
       owner: repository.owner.login,
       repo: repository.name,
