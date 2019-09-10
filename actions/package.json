@@ -9,7 +9,7 @@
     "github-actions"
   ],
   "license": "MIT",
-  "main": "checklist.js",
+  "main": "main.js",
   "dependencies": {
     "@actions/github": "^1.0.1",
     "js-yaml": "^3.13.1"
