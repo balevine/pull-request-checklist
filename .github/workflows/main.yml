@@ -1,0 +1,13 @@
+name: Checklist
+
+on: pull_request
+name: create a merge checklist
+jobs:
+  create-checklist-comment:
+    name: checklist comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: create comment
+        uses: balevine/actions/pr-checklist@production
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
