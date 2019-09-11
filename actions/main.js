@@ -1,6 +1,6 @@
 const github = require('@actions/github')
 const process = require('process')
-const octokit = new github.GitHub(process.env.PERSONAL_GITHUB_TOKEN)
+const octokit = new github.GitHub(process.env.GITHUB_TOKEN)
 
 async function run() {
   const payload = github.context.payload
