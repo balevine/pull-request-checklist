@@ -1,0 +1,14 @@
+name: Checklist
+
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  create-checklist-comment:
+    name: checklist comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: create comment
+        uses: balevine/pull-request-checklist/actions@production
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
